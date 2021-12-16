@@ -6,6 +6,8 @@
         "system_error": "cpp",
         "list": "cpp",
         "sstream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "map": "cpp",
+        "xtree": "cpp"
     }
 }
