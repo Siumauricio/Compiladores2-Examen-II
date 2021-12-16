@@ -99,7 +99,8 @@ void SubExpr::genCode(Code &code){
         releaseFloatTemp(rightCode.place);
         ss << leftCode.code << endl
         << rightCode.code <<endl
-        << "sub.s "<< code.place<<", "<< leftCode.place <<", "<< rightCode.place<<endl;
+        << "sub.s "<< leftCode.place<<", "<< leftCode.place <<", "<< rightCode.place<<endl;
+        code.code = ss.str();
 }
 
 void DivExpr::genCode(Code &code){
@@ -112,7 +113,8 @@ void DivExpr::genCode(Code &code){
         releaseFloatTemp(rightCode.place);
         ss << leftCode.code << endl
         << rightCode.code <<endl
-        << "div.s "<< code.place<<", "<< leftCode.place <<", "<< rightCode.place<<endl;
+        << "div.s "<< leftCode.place<<", "<< leftCode.place <<", "<< rightCode.place<<endl;
+        code.code = ss.str();
 }
 
 void IdExpr::genCode(Code &code){
@@ -121,7 +123,6 @@ void IdExpr::genCode(Code &code){
         code.place = this->id;
         ss << "lw " << code.place << ", " << this->id << endl;
         code.code = ss.str();
-
     }
     
 }
